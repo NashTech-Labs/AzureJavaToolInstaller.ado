@@ -9,10 +9,10 @@ The pipeline requires the following parameters to be defined:
 
 | Name  | Displayname | type | Default | Values | Opional/Required | Comments |
 | ------------- | ------------- | :-------------: | :-------------: | ------------- | :-------------: | ------------- |
-| versionSpec |   | string |  | | Required | |
-| jdkArchitectureOption |  | string |  | | Required |  |
-| jdkSourceOption |  | string |  | | Required |  |
-| jdkFile |  | string |  | | Optional |  |
+| versionSpec | JDK version | string | '8' | | Required | Specifies the JDK version to make available on the path. Use a whole number version, such as 10. |
+| jdkArchitectureOption | JDK architecture | string |  | x64, x86 | Required | Specifies the architecture (x86, x64) of the JDK |
+| jdkSourceOption | JDK source | string |  | AzureStorage (Azure Storage), LocalDirectory (Local Directory), PreInstalled (Pre-installed) | Required | Specifies the source for the compressed JDK. The source can be Azure blob storage or a local directory on the agent or source repository, or you can use the pre-installed version of Java |
+| jdkFile | JDK file | string |  | | Required when jdkSourceOption == LocalDirectory | Specifies the path to the JDK archive file that contains the compressed JDK. The path could be in your source repository or a local path on the agent. The file should be an archive (.zip, .tar.gz, .7z) containing the bin folder on the root level or inside a single directory. MacOS supports .pkg and .dmg files containing only one .pkg file inside. |
 | azureResourceManagerEndpoint |  | string |  | | Optional |  |
 | azureStorageAccountName |  | string |  | | Optional |  |
 | azureContainerName |  | string |  | | Optional |  |
